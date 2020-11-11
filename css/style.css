@@ -1,0 +1,51 @@
+.navbar {
+    background-color: #ffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    min-height: 70px;
+}
+
+.nav-item,
+.navbar-brand,
+.nav-link {
+    color: rgb(0, 0, 0);
+}
+
+
+.filtro {
+    text-align: center;
+}
+
+.carrera {
+    background: yellowgreen;
+}
+
+.publicidad {
+    background: skyblue;
+}
+
+.text-login {
+    background: cornflowerblue;
+}
+
+
+footer {
+    background: tomato;
+}
+
+.login-rigth {
+    background: chartreuse;
+}
+
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 40px;
+        line-height: normal;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
