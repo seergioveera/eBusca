@@ -18,7 +18,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
-            <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
+            <a href="../user/index.php">
+                <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
+            </a>
             <div class="form-login col-xs-12 col-md-9 col-lg-8">
                 <h1>Agregar Carrera: </h1>
                 <form action="../../resources/operacion.php" method="post">

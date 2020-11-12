@@ -19,27 +19,30 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
     include '../../resources/conexion.php';
     // ACA DEBE RECIBIR PARAMETROS DE ID, CORREO Y PASS
 
-    $sql = mysqli_query($conn, "Select * from carrera where idCarrera=2");
+    $sql = mysqli_query($conn, "Select * from carrera where idCarrera=7");
     if ($fila = mysqli_fetch_array($sql)) {
         $id = $fila["idCarrera"];
-        $nom = $fila["nombre"];
-        $desc = $fila["descripcion"];
-        $aran = $fila["arancel"];
-        $dura = $fila["duracion"];
-        $hora = $fila["idHorario"];
-        $moda = $fila["idModalidad"];
-        $insti = $fila["idInstitucion"];
-        $categ = $fila["idCategoria"];
-        $tele = $fila["telefono"];
+        $nombre = $fila["nombre"];
+        $institucion = $fila["idInstitucion"];
+        $descripcion = $fila["descripcion"];
+        $arancel = $fila["arancel"];
+        $duracion = $fila["duracion"];
+        $horario = $fila["idHorario"];
+        $modalidad = $fila["idModalidad"];
+        $categoria = $fila["idCategoria"];
+        $telefono = $fila["telefono"];
     }
     ?>
 
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
-            <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
+            <a href="../user/index.php">
+                <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
+            </a>
             <div class="form-login col-xs-12 col-md-9 col-lg-8">
                 <h1>Editar Carrera: </h1>
-                <form>
+
+                <form action="../../resources/operacion.php" method="post">
 
                     <div class="form-group">
                         <hr>
@@ -50,164 +53,160 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="library-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" value="<?php echo "$nom"; ?>" placeholder="Nombre de la Carrera">
+                            <input type="text" class="form-control" name="nombre" value="<?php echo "$nombre"; ?>" placeholder="Nombre de la Carrera">
                         </div>
                     </div>
-                </form>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Institucion: </label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="">
-                                <ion-icon name="home-outline"></ion-icon>
-                            </label>
-                        </div>
-                        <select class="browser-default custom-select" name="ciudad">
-                            <option value="0">Seleccione:</option>
-                            <?php
-                            $query = $mysqli->query("SELECT * FROM institucion ORDER BY nombre ASC");
-                            while ($valores = mysqli_fetch_array($query)) {
-                                echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="">Descripcion:</label>
-                    <textarea class="form-control" id="" rows="3"><?php echo "$desc"; ?></textarea>
-                </div>
-
-                <div class="form-group">
-                    <div class="form-row ">
-                        <div class="col-md-6">
-                            <label for="">Arancel: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="card-outline"></ion-icon>
-                                    </div>
-                                </div>
-                                <input type="number" class="form-control" id="" placeholder="Arancel" value="<?php echo "$aran"; ?>">
+                    <div class="form-group">
+                        <label for="">Institucion: </label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="">
+                                    <ion-icon name="home-outline"></ion-icon>
+                                </label>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="">Duracion: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="hourglass-outline"></ion-icon>
-                                    </div>
-                                </div>
-                                <input type="number" class="form-control" id="" placeholder="Duracion" value="<?php echo "$dura"; ?>">
-                            </div>
+                            <select class="browser-default custom-select" name="institucion">
+                                <option value="0">Seleccione:</option>
+                                <?php
+                                $query = $mysqli->query("SELECT * FROM institucion ORDER BY nombre ASC");
+                                while ($valores = mysqli_fetch_array($query)) {
+                                    echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="form-row ">
-                        <div class="col-md-6">
-                            <label for="exampleInputPassword1">Horario: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="time-outline"></ion-icon>
+                    <div class="form-group">
+                        <label for="">Descripcion:</label>
+                        <textarea class="form-control" name="descripcion" rows="3"><?php echo "$descripcion"; ?></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row ">
+                            <div class="col-md-6">
+                                <label for="">Arancel: </label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon name="card-outline"></ion-icon>
+                                        </div>
                                     </div>
+                                    <input type="number" class="form-control" name="arancel" placeholder="Arancel" value="<?php echo "$arancel"; ?>">
                                 </div>
-                                <select class="browser-default custom-select" name="horario">
-                                    <option value="0">Seleccione:</option>
-                                    <?php
-                                    $query = $mysqli->query("SELECT * FROM horario");
-                                    while ($valores = mysqli_fetch_array($query)) {
-                                        echo '<option name="horario" value="' . $valores[idHorario] . '">' . $valores[descripcion] . '</option>';
-                                    }
-                                    ?>
-                                </select>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="">Modalidad: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                            <div class="col-md-6">
+                                <label for="">Duracion: </label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon name="hourglass-outline"></ion-icon>
+                                        </div>
                                     </div>
+                                    <input type="number" class="form-control" name="duracion" placeholder="Duracion" value="<?php echo "$duracion"; ?>">
                                 </div>
-                                <input type="hidden" class="form-control" id="" hidden placeholder="Modalidad" value="<?php echo "$moda"; ?>">
-                                <select class="browser-default custom-select" name="horario">
-                                    <option value="0">Seleccione:</option>
-                                    <?php
-                                    $query = $mysqli->query("SELECT * FROM modalidad");
-                                    while ($valores = mysqli_fetch_array($query)) {
-                                        echo '<option name="horario" value="' . $valores[idModalidad] . '">' . $valores[descripcion] . '</option>';
-                                    }
-                                    ?>
-                                </select>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="form-row ">
-                        <div class="col-md-6">
-                            <label for="">Categoria: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="time-outline"></ion-icon>
+                    <div class="form-group">
+                        <div class="form-row ">
+                            <div class="col-md-6">
+                                <label for="exampleInputPassword1">Horario: </label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                        </div>
                                     </div>
+                                    <select class="browser-default custom-select" name="horario">
+                                        <option value="0">Seleccione:</option>
+                                        <?php
+                                        $query = $mysqli->query("SELECT * FROM horario");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option name="horario" value="' . $valores[idHorario] . '">' . $valores[descripcion] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                <input type="hidden" class="form-control" id="" placeholder="Categoria" value="<?php echo "$categ"; ?>">
-                                <select class="browser-default custom-select" name="horario">
-                                    <option value="0">Seleccione:</option>
-                                    <?php
-                                    $query = $mysqli->query("SELECT * FROM categoria");
-                                    while ($valores = mysqli_fetch_array($query)) {
-                                        echo '<option name="horario" value="' . $valores[idCategoria] . '">' . $valores[descripcion] . '</option>';
-                                    }
-                                    ?>
-                                </select>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="">Telefono: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                            <div class="col-md-6">
+                                <label for="">Modalidad: </label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                                        </div>
                                     </div>
+                                    <input type="hidden" class="form-control" id="" hidden placeholder="Modalidad" value="<?php echo "$modalidad"; ?>">
+                                    <select class="browser-default custom-select" name="modalidad">
+                                        <option value="0">Seleccione:</option>
+                                        <?php
+                                        $query = $mysqli->query("SELECT * FROM modalidad");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option name="modalidad" value="' . $valores[idModalidad] . '">' . $valores[descripcion] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                <input type="text" class="form-control" id="" placeholder="Modalidad" value="<?php echo "$tele"; ?>">
                             </div>
                         </div>
                     </div>
-                </div>
 
-
-
-                <div class="form-group">
-                    <div class="form-row ">
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-block btn-primary">Guardar</button>
-                            <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
-                            </small>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-block btn-danger">Eliminar</button>
-                            <small id="" class="form-text text-muted text-lg-center">Los datos no se podran recuperar.
-                            </small>
+                    <div class="form-group">
+                        <div class="form-row ">
+                            <div class="col-md-6">
+                                <label for="">Categoria: </label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" class="form-control" id="" placeholder="Categoria" value="<?php echo "$categoria"; ?>">
+                                    <select class="browser-default custom-select" name="categoria">
+                                        <option value="0">Seleccione:</option>
+                                        <?php
+                                        $query = $mysqli->query("SELECT * FROM categoria");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option name="categoria" value="' . $valores[idCategoria] . '">' . $valores[descripcion] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Telefono: </label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="telefono" placeholder="Modalidad" value="<?php echo "$telefono"; ?>">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <hr>
+                    <div class="form-group">
+                        <div class="form-row ">
+                            <div class="col-md-6">
+                                <input type="hidden" name="txtOpe" value='2'>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                <input type="submit" id="boton1" name="boton1" class="btn btn-block btn-primary" value="Guardar">
+                                <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
+                                </small>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-block btn-danger">Eliminar</button>
+                                <small id="" class="form-text text-muted text-lg-center">Los datos eliminados no se pueden recuperar.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
                 </form>
             </div>
-            </form>
         </div>
-    </div>
     </div>
     <!-- <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%;">
         <div class="footer-copyright text-center py-3">© 2020 Copyright:

@@ -31,7 +31,7 @@
                             CARRERAS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Carrera1</a>
+                            <a class="dropdown-item" href="#">Carrera</a>
                             <a class="dropdown-item" href="#">Carrera2</a>
                             <a class="dropdown-item" href="#">Carrera3</a>
                         </div>

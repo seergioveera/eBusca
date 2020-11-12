@@ -33,20 +33,18 @@
                             CARRERAS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Carrera1</a>
-                            <a class="dropdown-item" href="#">Carrera2</a>
-                            <a class="dropdown-item" href="#">Carrera3</a>
+                            <a class="dropdown-item" href="../career/create.php">Agregar Carrera</a>
+                            <a class="dropdown-item" href="../career/edit.php">Editar Carrera</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link  text-lowercase lead dropdown-toggle" href="#" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            UNIVERSIDADES
+                            INSTITUCIONES
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Universidad1</a>
-                            <a class="dropdown-item" href="#">Universidad2</a>
-                            <a class="dropdown-item" href="#">Universidad3</a>
+                        <a class="dropdown-item" href="../institution/create.php">Agregar Institucion</a>
+                            <a class="dropdown-item" href="../institution/edit.php">Editar Institucion</a>
                         </div>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">

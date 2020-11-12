@@ -57,9 +57,12 @@ if ($_REQUEST['boton1']) {
                 . "VALUES('$nombre','$institucion','$descripcion','$arancel','$duracion','$horario','$modalidad','$categoria','$telefono')");
             break;
         case '2':
-            $id = $_REQUEST['txtId'];
-            $sql = mysqli_query($conn, "UPDATE mascota SET nombre='$nombre',fechaNac='$fechaNac',"
-                . "peso='$peso',ciCliente='$ciCliente', idEspecie=$idEspecie where id='$id'");
+            $id = $_REQUEST['id'];
+            echo "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion'"
+            . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'";
+
+            $sql = mysqli_query($conn, "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion',"
+                . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'");
             echo $sql;
             break;
     }
@@ -107,7 +110,7 @@ if ($_REQUEST['boton2']) {
             echo "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
             . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' where idInstitucion='$id'";
             $sql = mysqli_query($conn, "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
-                . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' where id='$id'");
+                . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' WHERE id='$id'");
             echo $sql;
             break;
     }
