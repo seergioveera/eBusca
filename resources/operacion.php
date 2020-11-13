@@ -12,7 +12,7 @@ if ($_REQUEST['boton']) {
     include 'conexion.php';
     switch ($op) {
         case '1':
-            $sql = mysqli_query($conn, "insert into usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad)"
+            $sql = mysqli_query($conn, "INSERT INTO usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad)"
                 . "values('$nombre','$apellido','$fechaNacimiento','$correo','$pass','$ciudad')");
                 echo '<script type="text/javascript">
                 alert("Usuario registrado correctamente.");
@@ -21,7 +21,7 @@ if ($_REQUEST['boton']) {
             break;
         case '2':
             $id = $_REQUEST['id'];
-            $sql = mysqli_query($conn, "update usuario set nombre='$nombre',apellido='$apellido',"
+            $sql = mysqli_query($conn, "UPDATE usuario SET nombre='$nombre',apellido='$apellido',"
                 . "correo='$correo',fechaNacimiento='$fechaNacimiento',password='$pass', idCiudad='$ciudad' where idUsuario='$id'");
             echo $sql;
             echo '<script type="text/javascript">
@@ -69,7 +69,7 @@ if ($_REQUEST['boton1']) {
             break;
         case '2':
             $id = $_REQUEST['id'];
-            $sql = mysqli_query($conn, "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion',"
+            $sql = mysqli_query($conn, "UPDATE carrera SET nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion',"
                 . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'");
             echo $sql;
             echo '<script type="text/javascript">
@@ -124,7 +124,7 @@ if ($_REQUEST['boton2']) {
         case '2':
             $id = $_REQUEST['id'];
             echo "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
-            . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' where idInstitucion='$id'";
+            . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' WHERE idInstitucion='$id'";
             $sql = mysqli_query($conn, "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
                 . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' WHERE id='$id'");
             echo $sql;

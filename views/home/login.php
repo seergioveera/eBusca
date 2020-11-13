@@ -103,7 +103,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                     <button type="submit" id="entrarSistema" class="btn btn-block btn-primary" style="margin-top: 22px;">Ingresar</button>
                     <hr>
                     <small id="" class="form-text text-muted text-lg-center">¿Aún no tienes una cuenta?
-                        <a href="register.html">Crear una cuenta</a> </small>
+                        <a href="register.php">Crear una cuenta</a> </small>
                 </form>
             </div>
             <div class="text-login d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4">
@@ -136,19 +136,6 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 
 </html>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#entrarSistema').click(function() {
-            if ($('#usuario').val() == "") {
-                alert("Debes ingresar el correo.");
-                return false;
-            } else if ($('#password').val() == "") {
-                alert("Debes ingresar la contrasena.");
-                return false;
-            }
-        })
-    });
-</script>
 
 <?php
 if (isset($_GET['error'])) {
