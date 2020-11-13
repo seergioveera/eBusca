@@ -58,9 +58,8 @@ if ($_REQUEST['boton1']) {
             break;
         case '2':
             $id = $_REQUEST['id'];
-            echo "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion'"
-            . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'";
-
+            // echo "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion'"
+            // . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'";
             $sql = mysqli_query($conn, "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion',"
                 . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'");
             echo $sql;
@@ -118,6 +117,7 @@ if ($_REQUEST['boton2']) {
 ?>
     <script type="text/javascript">
         function cerrar() {
+            location.href="index.html";
             alert("Operación Exitosa.");
             self.close();
         }
