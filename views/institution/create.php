@@ -42,7 +42,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <ion-icon name="business-outline"></ion-icon>
+                                    <ion-icon name="trail-sign-outline"></ion-icon>
                                 </div>
                             </div>
                             <input type="text" class="form-control" id="" name="direccion" placeholder="Dirección de la Institución">

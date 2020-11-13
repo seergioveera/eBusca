@@ -103,14 +103,14 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Correo electronico: </label>
+                        <label for="exampleInputPassword1">Nombre de Usuario: </label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" name="correo" placeholder="Correo electronico">
+                            <input type="text" class="form-control" name="correo" placeholder="Nombre de Usuario">
                         </div>
                     </div>
                     <div class="form-row align-items-center">
@@ -208,7 +208,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                 alert("Debes agregar el apellido");
                 return false;
             } else if ($('#correo').val() == "") {
-                alert("Debes agregar el correo electronico");
+                alert("Debes agregar el Nombre de Usuario");
                 return false;
             } else if ($('#fechaNacimiento').val() == "") {
                 alert("Debes agregar la fecha de nacimiento");

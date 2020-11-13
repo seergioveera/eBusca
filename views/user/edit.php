@@ -70,14 +70,14 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Correo electronico: </label>
+                        <label for="">Nombre de Usuario: </label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" placeholder="Correo electronico" name="correo" value="<?php echo "$correo"; ?>">
+                            <input type="text" class="form-control" id="" placeholder="Nombre de Usuario" name="correo" value="<?php echo "$correo"; ?>">
                         </div>
                     </div>
                     <div class="form-row align-items-center">

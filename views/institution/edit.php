@@ -61,7 +61,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <ion-icon name="business-outline"></ion-icon>
+                                    <ion-icon name="trail-sign-outline"></ion-icon>
                                 </div>
                             </div>
                             <input type="text" class="form-control" name="direccion" value="<?php echo "$direc"; ?>" placeholder="Dirección de la Institución">

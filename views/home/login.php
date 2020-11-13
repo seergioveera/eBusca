@@ -72,14 +72,14 @@
                 <form method="POST" name="myForm" action="../../resources/validar.php">
                     <div class="form-group">
                         <hr>
-                        <label for="correo">Correo electronico: </label>
+                        <label for="correo">Nombre de Usuario: </label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="mail" name="txtUsuario" class="form-control" id="usuario" placeholder="Correo electronico">
+                            <input type="mail" name="txtUsuario" class="form-control" id="usuario" placeholder="Nombre de Usuario">
                         </div>
                     </div>
                     <div class="form-group">
