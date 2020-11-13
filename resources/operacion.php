@@ -14,14 +14,20 @@ if ($_REQUEST['boton']) {
         case '1':
             $sql = mysqli_query($conn, "insert into usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad)"
                 . "values('$nombre','$apellido','$fechaNacimiento','$correo','$pass','$ciudad')");
+                echo '<script type="text/javascript">
+                alert("Usuario registrado correctamente.");
+                window.location.href="../views/home/login.php";
+                </script>';
             break;
         case '2':
             $id = $_REQUEST['id'];
-            // echo "update usuario set nombre='$nombre',apellido='$apellido',"
-            // . "correo='$correo',fechaNacimiento='$fechaNacimiento',password='$pass', idCiudad='$ciudad' where idUsuario='$id'";
             $sql = mysqli_query($conn, "update usuario set nombre='$nombre',apellido='$apellido',"
                 . "correo='$correo',fechaNacimiento='$fechaNacimiento',password='$pass', idCiudad='$ciudad' where idUsuario='$id'");
             echo $sql;
+            echo '<script type="text/javascript">
+                alert("Datos modificados correctamente.");
+                window.location.href="../views/user/index.php";
+                </script>';
             break;
     }
 ?>
@@ -55,14 +61,21 @@ if ($_REQUEST['boton1']) {
         case '1':
             $sql = mysqli_query($conn, "INSERT INTO carrera (nombre,idInstitucion,descripcion,arancel,duracion,idHorario, idModalidad,idCategoria, telefono)"
                 . "VALUES('$nombre','$institucion','$descripcion','$arancel','$duracion','$horario','$modalidad','$categoria','$telefono')");
+                echo '<script type="text/javascript">
+                alert("Carrera registrada correctamente.");
+                window.location.href="../views/user/index.php";
+                </script>';
+                // header('Location:../views/home/login.php');
             break;
         case '2':
             $id = $_REQUEST['id'];
-            // echo "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion'"
-            // . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'";
             $sql = mysqli_query($conn, "update carrera set nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion',"
                 . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'");
             echo $sql;
+            echo '<script type="text/javascript">
+                alert("Carrera modificada correctamente.");
+                window.location.href="../views/user/index.php";
+                </script>';
             break;
     }
     mysqli_close($conn);
@@ -103,6 +116,10 @@ if ($_REQUEST['boton2']) {
         case '1':
             $sql = mysqli_query($conn, "INSERT INTO institucion (nombre,descripcion, direccion,correo,logo,telefono,idCiudad)"
                 . "VALUES('$nombre','$descripcion','$direccion','$correo','$ruta','$telefono','$ciudad')");
+                echo '<script type="text/javascript">
+                alert("Institucion registrada correctamente.");
+                window.location.href="../views/user/index.php";
+                </script>';
             break;
         case '2':
             $id = $_REQUEST['id'];
@@ -111,6 +128,10 @@ if ($_REQUEST['boton2']) {
             $sql = mysqli_query($conn, "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
                 . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' WHERE id='$id'");
             echo $sql;
+            echo '<script type="text/javascript">
+                alert("Institucion modificada correctamente.");
+                window.location.href="../views/user/index.php";
+                </script>';
             break;
     }
     mysqli_close($conn);

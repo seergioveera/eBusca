@@ -1,6 +1,6 @@
 <?php
 include('funciones.php');
-if(verificarUsuario()) {
+if (verificarUsuario()) {
     /*si el user es verificado, se elimina los valores, 
     se destruye la sesion y volvemos al formulario de ingreso*/
     session_start();
@@ -8,5 +8,8 @@ if(verificarUsuario()) {
     //solo los datos se truncan.
 
     session_destroy(); //destruye la sesion.
-    header('Location:../index.html');
+    echo '<script type="text/javascript">
+    alert("Sesion cerrada.");
+    window.location.href="../index.html";
+    </script>';
 }

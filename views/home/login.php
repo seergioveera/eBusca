@@ -147,7 +147,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                 return false;
             }
         })
-    })
+    });
 </script>
 
 <?php
