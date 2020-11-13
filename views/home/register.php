@@ -85,7 +85,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="man-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" require>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre"  required>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -97,7 +97,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                         </div>
                                     </div>
 
-                                    <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                                    <input type="text" class="form-control" name="apellido" placeholder="Apellido" required>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" name="correo" placeholder="Nombre de Usuario">
+                            <input type="text" class="form-control" name="correo" placeholder="Nombre de Usuario" required>
                         </div>
                     </div>
                     <div class="form-row align-items-center">
@@ -122,7 +122,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                         <ion-icon name="calendar-outline"></ion-icon>
                                     </div>
                                 </div>
-                                <input type="date" class="form-control" name="fechaNacimiento" placeholder="fechaNacimiento">
+                                <input type="date" class="form-control" name="fechaNacimiento" placeholder="fechaNacimiento" required>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -133,8 +133,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                         <ion-icon name="business-outline"></ion-icon>
                                     </div>
                                 </div>
-                                <select class="browser-default custom-select" name="ciudad">
-                                    <option value="0">Seleccione:</option>
+                                <select class="browser-default custom-select" name="ciudad" required>
+                                    <option value="" required>Seleccione:</option>
                                     <?php
                                     $query = $mysqli->query("SELECT * FROM ciudad");
                                     while ($valores = mysqli_fetch_array($query)) {
@@ -153,7 +153,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="key-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="password" class="form-control" name="pass" placeholder="Contraseña">
+                            <input type="password" class="form-control" name="pass" placeholder="Contraseña" required>
                         </div>
                     </div>
                     <small id="" class="form-text text-muted">Nunca compartiremos tus datos con alguien más.</small>

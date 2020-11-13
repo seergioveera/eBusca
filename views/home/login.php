@@ -1,3 +1,6 @@
+<?php
+$mysqli = new mysqli('localhost', 'root', '', 'eBusca');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +30,7 @@
                         <a class="nav-link  text-lowercase lead " href="../../index.html">INICIO</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link   text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             CARRERAS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -79,7 +82,7 @@
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="mail" name="txtUsuario" class="form-control" id="usuario" placeholder="Nombre de Usuario">
+                            <input type="mail" name="txtUsuario" class="form-control" id="usuario" placeholder="Nombre de Usuario" require>
                         </div>
                     </div>
                     <div class="form-group">
@@ -90,7 +93,7 @@
                                     <ion-icon name="key-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="password" name="txtClave" class="form-control" id="password" placeholder="Contraseña">
+                            <input type="password" name="txtClave" class="form-control" id="password" placeholder="Contraseña" require>
                         </div>
                     </div>
                     <div class="form-check">
@@ -99,7 +102,7 @@
                     </div>
                     <button type="submit" id="entrarSistema" class="btn btn-block btn-primary" style="margin-top: 22px;">Ingresar</button>
                     <hr>
-                    <small id="" class="form-text text-muted text-lg-center">Aun no tienes una cuenta?
+                    <small id="" class="form-text text-muted text-lg-center">¿Aún no tienes una cuenta?
                         <a href="register.html">Crear una cuenta</a> </small>
                 </form>
             </div>
@@ -137,10 +140,10 @@
     $(document).ready(function() {
         $('#entrarSistema').click(function() {
             if ($('#usuario').val() == "") {
-                alert("Debes ingresar el correo");
+                alert("Debes ingresar el correo.");
                 return false;
             } else if ($('#password').val() == "") {
-                alert("Debes ingresar la contrasena");
+                alert("Debes ingresar la contrasena.");
                 return false;
             }
         })
@@ -149,10 +152,10 @@
 
 <?php
 if (isset($_GET['error'])) {
-  $error = $_GET['error'];
-  if ($error == 1) {
-    echo '<script type="text/javascript">alert("Usuario o contraseña incorrecta. ");</script>';
-    echo '<script type="text/javascript">window.document.myForm.txtUsuario.focus();</script>';
-  }
+    $error = $_GET['error'];
+    if ($error == 1) {
+        echo '<script type="text/javascript">alert("Usuario o contraseña incorrecta. ");</script>';
+        echo '<script type="text/javascript">window.document.myForm.txtUsuario.focus();</script>';
+    }
 }
 ?>

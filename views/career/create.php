@@ -34,7 +34,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="business-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre de la Carrera">
+                            <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre de la Carrera" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -45,8 +45,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="home-outline"></ion-icon>
                                 </label>
                             </div>
-                            <select class="browser-default custom-select" name="institucion">
-                                <option value="0">Seleccione:</option>
+                            <select class="browser-default custom-select" name="institucion" required>
+                                <option value="" required>Seleccione:</option>
                                 <?php
                                 $query = $mysqli->query("SELECT * FROM institucion ORDER BY nombre ASC");
                                 while ($valores = mysqli_fetch_array($query)) {
@@ -59,7 +59,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 
                     <div class="form-group">
                         <label for="">Descripcion:</label>
-                        <textarea class="form-control" id="" name="descripcion" rows="3"></textarea>
+                        <textarea class="form-control" id="" name="descripcion" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -72,18 +72,18 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="card-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="number" class="form-control" id="" name="arancel" placeholder="Arancel">
+                                    <input type="number" class="form-control" id="" name="arancel" placeholder="Arancel" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="">Duración: </label>
+                                <label for="">Semestres: </label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <ion-icon name="hourglass-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="number" class="form-control" id="" name="duracion" placeholder="Duracion">
+                                    <input type="number" class="form-control" id="" name="duracion" placeholder="Semestres" required>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +99,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="time-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <select class="browser-default custom-select" name="horario">
-                                        <option value="0">Seleccione:</option>
+                                    <select class="browser-default custom-select" name="horario" required>
+                                        <option value="" required>Seleccione:</option>
                                         <?php
                                         $query = $mysqli->query("SELECT * FROM horario");
                                         while ($valores = mysqli_fetch_array($query)) {
@@ -118,8 +118,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="file-tray-stacked-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <select class="browser-default custom-select" name="modalidad">
-                                        <option value="0">Seleccione:</option>
+                                    <select class="browser-default custom-select" name="modalidad" required>
+                                        <option value="" required>Seleccione:</option>
                                         <?php
                                         $query = $mysqli->query("SELECT * FROM modalidad");
                                         while ($valores = mysqli_fetch_array($query)) {
@@ -142,8 +142,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="documents-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <select class="browser-default custom-select" name="categoria">
-                                        <option value="0">Seleccione:</option>
+                                    <select class="browser-default custom-select" name="categoria" required>
+                                        <option value="" required>Seleccione:</option>
                                         <?php
                                         $query = $mysqli->query("SELECT * FROM categoria ORDER BY descripcion ASC");
                                         while ($valores = mysqli_fetch_array($query)) {
@@ -161,7 +161,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="call-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="number" class="form-control" id="" name="telefono" placeholder="Telefono">
+                                    <input type="number" class="form-control" id="" name="telefono" placeholder="Telefono" required>
                                 </div>
                             </div>
                         </div>
