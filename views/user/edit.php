@@ -1,6 +1,7 @@
 <?php
 $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,12 +17,18 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 <body>
 
     <?php
-    // $idUser = $_GET["id"];
+     include('../../resources/funciones.php');
+     //si la funcion verificarUsuario retorno true, la sesion esta iniciada
+     if (verificarUsuario()) {
+         $user = $_SESSION['miUsuario'];
+        //  echo "<b>Bienvenido: $user<b>";
+     } 
+ 
     include '../../resources/conexion.php';
     // ACA DEBE RECIBIR PARAMETROS DE ID, CORREO Y/O PASS
 
     // $sql = mysqli_query($conn, "Select * from usuario where correo='$usuario' AND password='$clave'");
-    $sql = mysqli_query($conn, "Select * from usuario where idUsuario=17");
+    $sql = mysqli_query($conn, "SELECT * FROM usuario WHERE idUsuario = (SELECT idUsuario FROM usuario WHERE correo = '$user');");
     if ($fila = mysqli_fetch_array($sql)) {
         $id = $fila["idUsuario"];
         $nom = $fila["nombre"];
@@ -52,7 +59,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                             <ion-icon name="man-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo "$nom"; ?>">
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo "$nom"; ?>" required>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -64,7 +71,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                         </div>
                                     </div>
 
-                                    <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="<?php echo "$ape"; ?>">
+                                    <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="<?php echo "$ape"; ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +84,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" placeholder="Nombre de Usuario" name="correo" value="<?php echo "$correo"; ?>">
+                            <input type="text" class="form-control" id="" placeholder="Nombre de Usuario" name="correo" value="<?php echo "$correo"; ?>" required >
                         </div>
                     </div>
                     <div class="form-row align-items-center">
@@ -89,7 +96,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                         <ion-icon name="calendar-outline"></ion-icon>
                                     </div>
                                 </div>
-                                <input type="date" class="form-control" id="" placeholder="" name="fechaNacimiento" value="<?php echo "$fecha"; ?>">
+                                <input type="date" class="form-control" id="" placeholder="" name="fechaNacimiento" value="<?php echo "$fecha"; ?>" required>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -100,8 +107,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                         <ion-icon name="body-outline"></ion-icon>
                                     </div>
                                 </div>
-                                <select class="browser-default custom-select" name="ciudad">
-                                    <option value="0">Seleccione:</option>
+                                <select class="browser-default custom-select" name="ciudad" required>
+                                    <option value="" required>Seleccione:</option>
                                     <?php
                                     $query = $mysqli->query("SELECT * FROM ciudad ORDER BY nombre ASC");
                                     while ($valores = mysqli_fetch_array($query)) {
@@ -120,7 +127,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                     <ion-icon name="key-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" name="pass" placeholder="Contraseña" value="<?php echo "$pass"; ?>">
+                            <input type="text" class="form-control" name="pass" placeholder="Contraseña" value="<?php echo "$pass"; ?>" required>
                         </div>
                     </div>
                     <div class="form-group">

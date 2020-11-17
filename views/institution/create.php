@@ -13,6 +13,23 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
     <title>Agregar</title>
 </head>
 
+
+<?php
+     include('../../resources/funciones.php');
+     //si la funcion verificarUsuario retorno true, la sesion esta iniciada
+     if (verificarUsuario()) {
+         $user = $_SESSION['miUsuario'];
+         //echo "<b>Bienvenido: $user<b>";
+     } 
+ 
+    include '../../resources/conexion.php';
+
+    $sql = mysqli_query($conn, "SELECT idUsuario FROM usuario WHERE correo='$user'");
+    if ($fila = mysqli_fetch_array($sql)) {
+        $user = $fila["idUsuario"];
+    }
+    ?>
+
 <body>
 
     <div class="container" style="margin-top: 120px;">
@@ -33,11 +50,10 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="business-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre de la Institución">
+                            <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre de la Institución" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <hr>
                         <label for="">Dirección de la Institución: </label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -45,7 +61,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="trail-sign-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" name="direccion" placeholder="Dirección de la Institución">
+                            <input type="text" class="form-control" id="" name="direccion" placeholder="Dirección de la Institución" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -56,14 +72,14 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <textarea class="form-control" id="" name="descripcion" rows="3"></textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <span>
                                     <div class="form-group">
                                         <label for="">Agregar un logo:</label>
                                         <input type="file" class="form-control-file" id="" name="imagen" style="font-size: 14px;">
                                     </div>
                                 </span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -74,7 +90,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="" name="correo" placeholder="Correo electronico">
+                            <input type="text" class="form-control" id="" name="correo" placeholder="Correo electronico" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -87,7 +103,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="call-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="number" class="form-control" id="" name="telefono" placeholder="Telefono">
+                                    <input type="number" class="form-control" id="" name="telefono" placeholder="Telefono" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -98,8 +114,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="home-outline"></ion-icon>
                                         </label>
                                     </div>
-                                    <select class="browser-default custom-select" name="ciudad">
-                                        <option value="0">Seleccione:</option>
+                                    <select class="browser-default custom-select" name="ciudad" required>
+                                        <option value="" required>Seleccione:</option>
                                         <?php
                                         $query = $mysqli->query("SELECT * FROM ciudad");
                                         while ($valores = mysqli_fetch_array($query)) {
@@ -113,6 +129,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     </div>
 
                     <input type="hidden" name="txtOpe" value='1'>
+                    <input type="hidden" class="form-control" name="id" placeholder="" value="<?php echo "$user"; ?>">
                     <input type="submit" name="boton2" class="btn btn-block btn-primary" style="margin-top: 22px;" value="Registrar">
                     <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
                     </small>

@@ -16,6 +16,23 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 
 <body>
 
+<?php
+     include('../../resources/funciones.php');
+     //si la funcion verificarUsuario retorno true, la sesion esta iniciada
+     if (verificarUsuario()) {
+         $user = $_SESSION['miUsuario'];
+         //echo "<b>Bienvenido: $user<b>";
+     } 
+ 
+    include '../../resources/conexion.php';
+
+    $sql = mysqli_query($conn, "SELECT idUsuario FROM usuario WHERE correo='$user'");
+    if ($fila = mysqli_fetch_array($sql)) {
+        $id = $fila["idUsuario"];
+        // echo $id;
+    }
+    ?>
+
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
             <a href="../user/index.php">
@@ -48,7 +65,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                             <select class="browser-default custom-select" name="institucion" required>
                                 <option value="" required>Seleccione:</option>
                                 <?php
-                                $query = $mysqli->query("SELECT * FROM institucion ORDER BY nombre ASC");
+                                
+                                $query = $mysqli->query("SELECT * FROM institucion WHERE idUsuario = $id");
                                 while ($valores = mysqli_fetch_array($query)) {
                                     echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
                                 }
@@ -168,6 +186,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     </div>
 
                     <input type="hidden" name="txtOpe" value='1'>
+                    <input type="hidden" name="idUser" value="<?php echo $id?>">
                     <input type="submit" name="boton1" class="btn btn-block btn-primary" style="margin-top: 22px;" value="Registrar">
                     <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
                     </small>

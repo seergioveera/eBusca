@@ -12,7 +12,7 @@ if(metodo($usuario, $clave)) {
         </script>';
     } else {
         echo '<script type="text/javascript">
-        alert("Bienvenido USER.");
+        alert("Bienvenido.");
         window.location.href="../views/user/index.php";
         </script>';
     }

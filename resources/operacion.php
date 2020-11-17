@@ -14,7 +14,7 @@ if ($_REQUEST['boton']) {
         case '1':
             $sql = mysqli_query($conn, "INSERT INTO usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad)"
                 . "values('$nombre','$apellido','$fechaNacimiento','$correo','$pass','$ciudad')");
-                echo '<script type="text/javascript">
+            echo '<script type="text/javascript">
                 alert("Usuario registrado correctamente.");
                 window.location.href="../views/home/login.php";
                 </script>';
@@ -55,22 +55,23 @@ if ($_REQUEST['boton1']) {
     $categoria = $_REQUEST['categoria'];
     $telefono = $_REQUEST['telefono'];
 
+    $idUser = $_REQUEST['idUser'];
     $op = $_REQUEST['txtOpe'];
     include 'conexion.php';
     switch ($op) {
         case '1':
-            $sql = mysqli_query($conn, "INSERT INTO carrera (nombre,idInstitucion,descripcion,arancel,duracion,idHorario, idModalidad,idCategoria, telefono)"
-                . "VALUES('$nombre','$institucion','$descripcion','$arancel','$duracion','$horario','$modalidad','$categoria','$telefono')");
-                echo '<script type="text/javascript">
+            $sql = mysqli_query($conn, "INSERT INTO carrera (nombre,idInstitucion,descripcion,arancel,duracion,idHorario, idModalidad,idCategoria, telefono, idUsuario)"
+                . "VALUES('$nombre','$institucion','$descripcion','$arancel','$duracion','$horario','$modalidad','$categoria','$telefono','$idUser')");
+            echo '<script type="text/javascript">
                 alert("Carrera registrada correctamente.");
                 window.location.href="../views/user/index.php";
                 </script>';
-                // header('Location:../views/home/login.php');
+            // header('Location:../views/home/login.php');
             break;
         case '2':
-            $id = $_REQUEST['id'];
+            $idCarrera = $_REQUEST['id'];
             $sql = mysqli_query($conn, "UPDATE carrera SET nombre='$nombre',descripcion='$descripcion',arancel='$arancel',idInstitucion='$institucion',"
-                . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$id'");
+                . "duracion='$duracion',telefono='$telefono',idHorario='$horario', idModalidad='$modalidad',idCategoria='$categoria' where idCarrera='$idCarrera'");
             echo $sql;
             echo '<script type="text/javascript">
                 alert("Carrera modificada correctamente.");
@@ -98,35 +99,34 @@ if ($_REQUEST['boton2']) {
     $nombre = $_REQUEST['nombre'];
     $descripcion = $_REQUEST['descripcion'];
     $direccion = $_REQUEST['direccion'];
-    $rutaServer = "logos";
-    $logoName = $_FILES['imagen']['name']; //contiene el nombre de la img
-    $archivo = $_FILES['imagen']['tmp_name']; //contiene el archivo
-    //date_default_timezone_set('UTC');
-    //$logoName = date('Y-m-d-h:i:s') . "-" . $logoName;
-    $ruta = $rutaServer . "/" . $logoName; //images/nombre.jpg
-    move_uploaded_file($archivo, $ruta); //mover el arch. al folder
+    // $rutaServer = "logos";
+    // $logoName = $_FILES['imagen']['name']; //contiene el nombre de la img
+    // $archivo = $_FILES['imagen']['tmp_name']; //contiene el archivo
 
+    //(date_default_timezone_set('UTC');
+    //$logoName = date('Y-m-d-h:i:s') . "-" . $logoName) NO FUNCIONA;
+
+    // $ruta = $rutaServer . "/" . $logoName; //images/nombre.jpg
+    // move_uploaded_file($archivo, $ruta); //mover el arch. al folder
     $correo = $_REQUEST['correo'];
     $telefono = $_REQUEST['telefono'];
     $ciudad = $_REQUEST['ciudad'];
-
+    $id = $_REQUEST['id'];
     $op = $_REQUEST['txtOpe'];
     include 'conexion.php';
     switch ($op) {
         case '1':
-            $sql = mysqli_query($conn, "INSERT INTO institucion (nombre,descripcion, direccion,correo,logo,telefono,idCiudad)"
-                . "VALUES('$nombre','$descripcion','$direccion','$correo','$ruta','$telefono','$ciudad')");
-                echo '<script type="text/javascript">
+            $sql = mysqli_query($conn, "INSERT INTO institucion (nombre,descripcion, direccion,correo,telefono,idCiudad,idUsuario)"
+                . "VALUES('$nombre','$descripcion','$direccion','$correo','$telefono','$ciudad','$id')");
+            echo '<script type="text/javascript">
                 alert("Institucion registrada correctamente.");
                 window.location.href="../views/user/index.php";
                 </script>';
             break;
         case '2':
             $id = $_REQUEST['id'];
-            echo "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
-            . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' WHERE idInstitucion='$id'";
             $sql = mysqli_query($conn, "UPDATE institucion SET nombre='$nombre',descripcion='$descripcion',direccion='$direccion',"
-                . "telefono='$telefono',correo='$correo', logo='$ruta', idCiudad='$ciudad' WHERE id='$id'");
+                . "telefono='$telefono',correo='$correo', idCiudad='$ciudad' WHERE idInstitucion='$id'");
             echo $sql;
             echo '<script type="text/javascript">
                 alert("Institucion modificada correctamente.");
@@ -138,7 +138,7 @@ if ($_REQUEST['boton2']) {
 ?>
     <script type="text/javascript">
         function cerrar() {
-            location.href="index.html";
+            location.href = "index.html";
             alert("Operación Exitosa.");
             self.close();
         }

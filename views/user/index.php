@@ -34,7 +34,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../career/create.php">Agregar Carrera</a>
-                            <a class="dropdown-item" href="../career/edit.php">Editar Carrera</a>
+                            <a class="dropdown-item" href="../career/list.php">Editar Carrera</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -44,7 +44,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../institution/create.php">Agregar Institucion</a>
-                            <a class="dropdown-item" href="../institution/edit.php">Editar Institucion</a>
+                            <a class="dropdown-item" href="../institution/list.php">Editar Institucion</a>
                         </div>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">

@@ -15,28 +15,29 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 
 <body>
 
-    <?php
-    // $idCli = $_GET["id"];
-    include '../../resources/conexion.php';
-    // ACA DEBE RECIBIR PARAMETROS DE ID, CORREO Y PASS
 
-    $sql = mysqli_query($conn, "Select * from institucion where idInstitucion='10'");
-    if ($fila = mysqli_fetch_array($sql)) {
-        $id = $fila["idInstitucion"];
-        $nom = $fila["nombre"];
-        $desc = $fila["descripcion"];
-        $direc = $fila["direccion"];
-        $tel = $fila["telefono"];
-        $logo = $fila["logo"];
-        $correo = $fila["correo"];
-        $user = $fila["idUsuario"];
-        $ciud = $fila["idCiudad"];
-    }
-    ?>
+
+<?php
+$idInstitucion = $_GET["id"];
+include '../../resources/conexion.php';
+$sql = mysqli_query($conn, "SELECT * FROM institucion WHERE idInstitucion=$idInstitucion");
+if ($fila = mysqli_fetch_array($sql)) {
+    $nom = $fila["nombre"];
+    $desc = $fila["descripcion"];
+    $direc = $fila["direccion"];
+    $tel = $fila["telefono"];
+    // $logo = $fila["logo"];
+    $correo = $fila["correo"];
+    $user = $fila["idUsuario"];
+    $ciud = $fila["idCiudad"];
+}
+?>
+
+
 
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
-            <a href="../user/index.php">
+            <a href="list.php">
                 <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
             </a>
             <div class="form-login col-xs-12 col-md-9 col-lg-8">
@@ -56,7 +57,6 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         </div>
                     </div>
                     <div class="form-group">
-                        <hr>
                         <label for="">Dirección de la Institución: </label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -75,14 +75,14 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                     <textarea class="form-control" name="descripcion" rows="3"><?php echo "$desc"; ?></textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <span>
                                     <div class="form-group">
                                         <label for="">Agregar un logo:</label>
                                         <input type="file" name="imagen" class="form-control-file" style="font-size: 14px;">
                                     </div>
                                 </span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -134,7 +134,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         <div class="form-row ">
                             <div class="col-md-6">
                                 <input type="hidden" name="txtOpe" value='2'>
-                                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                <input type="hidden" name="id" value="<?php echo $idInstitucion; ?>">
                                 <input type="submit" name="boton2" class="btn btn-block btn-primary" value="Guardar">
                                 <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
                                 </small>

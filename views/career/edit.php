@@ -14,12 +14,11 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 </head>
 
 <body>
-    <?php
-    // $idCli = $_GET["id"];
-    include '../../resources/conexion.php';
-    // ACA DEBE RECIBIR PARAMETROS DE ID, CORREO Y/O PASS
 
-    $sql = mysqli_query($conn, "Select * from carrera where idCarrera=7");
+    <?php
+    $idCarrera = $_GET["id"];
+    include '../../resources/conexion.php';
+    $sql = mysqli_query($conn, "SELECT * FROM carrera WHERE idCarrera=$idCarrera");
     if ($fila = mysqli_fetch_array($sql)) {
         $id = $fila["idCarrera"];
         $nombre = $fila["nombre"];
@@ -31,6 +30,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
         $modalidad = $fila["idModalidad"];
         $categoria = $fila["idCategoria"];
         $telefono = $fila["telefono"];
+        $idUser = $fila["idUsuario"];
     }
     ?>
 
@@ -67,7 +67,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                             <select class="browser-default custom-select" name="institucion" required>
                                 <option value="" required>Seleccione:</option>
                                 <?php
-                                $query = $mysqli->query("SELECT * FROM institucion ORDER BY nombre ASC");
+
+                                $query = $mysqli->query("SELECT * FROM institucion WHERE idUsuario = $idUser");
                                 while ($valores = mysqli_fetch_array($query)) {
                                     echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
                                 }
@@ -95,14 +96,14 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="">Duracion: </label>
+                                <label for="">Semestres: </label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <ion-icon name="hourglass-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="number" class="form-control" name="duracion" placeholder="Duracion" value="<?php echo "$duracion"; ?>" required>
+                                    <input type="number" class="form-control" name="duracion" placeholder="Semestres" value="<?php echo "$duracion"; ?>" required>
                                 </div>
                             </div>
                         </div>
