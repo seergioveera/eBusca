@@ -138,7 +138,7 @@ if ($_REQUEST['boton2']) {
 ?>
     <script type="text/javascript">
         function cerrar() {
-            location.href = "index.html";
+            location.href = "index.php";
             alert("Operación Exitosa.");
             self.close();
         }

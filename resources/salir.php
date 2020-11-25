@@ -7,6 +7,6 @@ if (verificarUsuario()) {
     session_destroy(); //destruye la sesion.
     echo '<script type="text/javascript">
     alert("Sesion cerrada.");
-    window.location.href="../index.html";
+    window.location.href="../index.php";
     </script>';
 }

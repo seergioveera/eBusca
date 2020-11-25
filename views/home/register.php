@@ -28,7 +28,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link  text-lowercase lead " href="../../index.html">INICIO</a>
+                        <a class="nav-link  text-lowercase lead " href="../../index.php">INICIO</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link   text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,11 +57,11 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                         <a class="nav-link lead " href="register.php">CREAR CUENTA</a>
                     </li>
                     <li>
-                        <div class="d-none d-md-block col-md-3 col-lg-6">
+                        <!-- <div class="d-none d-md-block col-md-3 col-lg-6">
                             <a class="nav-link" href="#">
                                 <ion-icon name="person-circle-outline" style="font-size: 25px;"></ion-icon>
                             </a>
-                        </div>
+                        </div> -->
                     </li>
                 </ul>
             </div>

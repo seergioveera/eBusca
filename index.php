@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/peticion.js"></script>
+    <title>eBusca</title>
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap3-typeahead.min.js"></script>
+    <script type="text/javascript" src="js/typeahead.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top lead">
+        <div class="container">
+            <a class="navbar-brand  lead" href="#">
+                <ion-icon name="library-outline"></ion-icon> eBusca
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <ion-icon name="grid-outline" style="font-size: 32px;"></ion-icon>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="#">INICIO</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link   text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CARRERAS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Carrera1</a>
+                            <a class="dropdown-item" href="#">Carrera2</a>
+                            <a class="dropdown-item" href="#">Carrera3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  text-lowercase lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            UNIVERSIDADES
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Universidad1</a>
+                            <a class="dropdown-item" href="#">Universidad2</a>
+                            <a class="dropdown-item" href="#">Universidad3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item text-lowercase  active content-center">
+                        <a class="nav-link lead " href="views/home/login.php">INICIAR SESION</a>
+                    </li>
+                    <li class="nav-item text-lowercase  active content-center">
+                        <a class="nav-link lead " href="views/home/register.php">CREAR CUENTA</a>
+                    </li>
+                    <!-- <li>
+                        <div class="d-none d-md-block col-md-3 col-lg-6">
+                            <a class="nav-link" href="#">
+                                <ion-icon name="person-circle-outline" style="font-size: 25px;"></ion-icon>
+                            </a>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/img (1).jpg" class="d-block w-100" alt="..." style="width:640px;height:420px">
+                <div class="carousel-caption d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/img (5)2.jpg" class="d-block w-100" alt="..." style="width:640px;height:420px">
+                <div class="carousel-caption d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/img (3).jpg" class="d-block w-100" alt="..." style="width:640px;height:420px">
+                <div class="carousel-caption d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <hr>
+        <section class="row">
+            <div class="filtro col-xs-12 col-md-12 col-lg-12">
+                <p class="lead filtro-title text-primary">
+                    <ion-icon name="options-outline"></ion-icon> Filtro de búsqueda:
+                </p>
+                <section>
+                    <input type="text" class="form-control mb-2 typeahead form-control-lg" name="busqueda" id="busqueda" placeholder="Buscar Carrera">
+                </section>
+                <section id="tabla_resultado">
+                    <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
+                </section>
+                <br><br>
+            </div>
+    </div>
+    <hr>
+    </div>
+    <footer class="page-footer font-small blue" style="margin-top: 15px;">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#busqueda').typeahead({
+            source: function (query, result) {
+                $.ajax({
+                    url: "resources/autocomplete.php",
+					data: 'query=' + query,            
+                    dataType: "json",
+                    type: "POST",
+                    success: function (data) {
+						result($.map(data, function (item) {
+							return item;
+                        }));
+                    }
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="typeahead.js"></script>
+
+</html>

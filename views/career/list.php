@@ -72,7 +72,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
             echo "<th style='color:white'>Nombre</th>";
             echo "<th style='color:white'>Descripción</th>";
             echo "<th style='color:white'>Arancel</th>";
-            echo "<th style='color:white'>Semestres</th>";
+            echo "<th style='color:white'>Duración</th>";
             echo "<th style='color:white'>Telefono</th>";
             echo "<th style='color:white'>Modificar</th>";
             echo "</thead>";
@@ -97,10 +97,6 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
         }
         ?>
     </div>
-
-
-
-
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 </body>
