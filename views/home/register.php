@@ -16,9 +16,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top lead">
+<nav class="navbar navbar-expand-lg fixed-top lead">
         <div class="container">
-            <a class="navbar-brand  lead" href="#">
+            <a class="navbar-brand  lead" href="../../index.php">
                 <ion-icon name="library-outline"></ion-icon> eBusca
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,38 +30,17 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     <li class="nav-item active">
                         <a class="nav-link  text-lowercase lead " href="../../index.php">INICIO</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link   text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CARRERAS
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Carrera1</a>
-                            <a class="dropdown-item" href="#">Carrera2</a>
-                            <a class="dropdown-item" href="#">Carrera3</a>
-                        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="../information/listCareer.php">carreras</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  text-lowercase lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            UNIVERSIDADES
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Universidad1</a>
-                            <a class="dropdown-item" href="#">Universidad2</a>
-                            <a class="dropdown-item" href="#">Universidad3</a>
-                        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="../information/listInstitution.php">universidades</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="login.php">INICIAR SESION</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="register.php">CREAR CUENTA</a>
-                    </li>
-                    <li>
-                        <!-- <div class="d-none d-md-block col-md-3 col-lg-6">
-                            <a class="nav-link" href="#">
-                                <ion-icon name="person-circle-outline" style="font-size: 25px;"></ion-icon>
-                            </a>
-                        </div> -->
                     </li>
                 </ul>
             </div>
@@ -71,8 +50,12 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
             <div class="form-login col-xs-12 col-md-9 col-lg-8">
-                <h1>Crear una cuenta</h1>
-
+            <div class="main row">
+                    <a href="../../index.php">
+                        <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
+                    </a>
+                    <h1>Crear una cuenta</h1>
+                </div>
                 <form method="post" action="../../resources/operacion.php">
                     <div class="form-group">
                         <hr>

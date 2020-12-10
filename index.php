@@ -29,27 +29,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link  text-lowercase lead " href="#">INICIO</a>
+                        <a class="nav-link  text-lowercase lead " href="index.php">INICIO</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link   text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CARRERAS
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Carrera1</a>
-                            <a class="dropdown-item" href="#">Carrera2</a>
-                            <a class="dropdown-item" href="#">Carrera3</a>
-                        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="views/information/listCareer.php">carreras</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  text-lowercase lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            UNIVERSIDADES
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Universidad1</a>
-                            <a class="dropdown-item" href="#">Universidad2</a>
-                            <a class="dropdown-item" href="#">Universidad3</a>
-                        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="views/information/listInstitution.php">universidades</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="views/home/login.php">INICIAR SESION</a>
@@ -57,22 +43,15 @@
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="views/home/register.php">CREAR CUENTA</a>
                     </li>
-                    <!-- <li>
-                        <div class="d-none d-md-block col-md-3 col-lg-6">
-                            <a class="nav-link" href="#">
-                                <ion-icon name="person-circle-outline" style="font-size: 25px;"></ion-icon>
-                            </a>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#" data-slide-to="0" class="active"></li>
+            <li data-target="#" data-slide-to="1"></li>
+            <li data-target="#" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -111,11 +90,17 @@
         <hr>
         <section class="row">
             <div class="filtro col-xs-12 col-md-12 col-lg-12">
-                <p class="lead filtro-title text-primary">
+                <p class="lead filtro-title" style="color:#0275d8; font-size:155%;">
                     <ion-icon name="options-outline"></ion-icon> Filtro de búsqueda:
                 </p>
                 <section>
-                    <input type="text" class="form-control mb-2 typeahead form-control-lg" name="busqueda" id="busqueda" placeholder="Buscar Carrera">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span span class="input-group-text" id="inputGroup-sizing-lg"><ion-icon name="search-outline"></ion-icon></ion-icon></span>
+                        </div>
+                        <input type="text" class="form-control typeahead form-control-lg" name="busqueda" id="busqueda" placeholder="Buscar Carrera" aria-describedby="basic-addon1">
+                    </div>
+                    
                 </section>
                 <section id="tabla_resultado">
                     <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
@@ -134,17 +119,17 @@
     <script src="js/bootstrap.min.js"></script>
 </body>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#busqueda').typeahead({
-            source: function (query, result) {
+            source: function(query, result) {
                 $.ajax({
                     url: "resources/autocomplete.php",
-					data: 'query=' + query,            
+                    data: 'query=' + query,
                     dataType: "json",
                     type: "POST",
-                    success: function (data) {
-						result($.map(data, function (item) {
-							return item;
+                    success: function(data) {
+                        result($.map(data, function(item) {
+                            return item;
                         }));
                     }
                 });
