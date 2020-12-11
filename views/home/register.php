@@ -37,7 +37,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                         <a class="nav-link  text-lowercase lead " href="../information/listInstitution.php">universidades</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
-                        <a class="nav-link lead " href="login.php">INICIAR SESION</a>
+                        <a class="nav-link lead " href="login.php">INICIAR sesión</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="register.php">CREAR CUENTA</a>
@@ -159,7 +159,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     <input type="submit" name="boton" class="btn btn-block btn-primary" style="margin-top: 22px;" value="Registrar">
                     <hr>
                     <small id="" class="form-text text-muted text-lg-center">¿Ya te encuentras registrado?
-                        <a href="login.php">Iniciar sesion</a> </small>
+                        <a href="login.php">Iniciar sesión</a> </small>
                 </form>
             </div>
             <div class="text-login d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4">

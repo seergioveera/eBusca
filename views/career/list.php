@@ -39,7 +39,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 
     <?php
     include('../../resources/funciones.php');
-    //si la funcion verificarUsuario retorno true, la sesion esta iniciada
+    //si la funcion verificarUsuario retorno true, la sesión esta iniciada
     if (verificarUsuario()) {
         $user = $_SESSION['miUsuario'];
         // echo "UserName: $user";

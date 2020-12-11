@@ -136,12 +136,13 @@ if ($fila = mysqli_fetch_array($sql)) {
                                 <input type="hidden" name="txtOpe" value='2'>
                                 <input type="hidden" name="id" value="<?php echo $idInstitucion; ?>">
                                 <input type="submit" name="boton2" class="btn btn-block btn-primary" value="Guardar">
-                                <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
+                                <small id="" class="form-text text-muted text-lg-center">Todos sus datos están protegidos.
                                 </small>
                             </div>
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-block btn-danger">Eliminar</button>
-                                <small id="" class="form-text text-muted text-lg-center">Los datos eliminados no se pueden
+                                <button type="submit" class="btn btn-block btn-danger">Cancelar</button>
+                                <small id="" class="form-text text-muted text-lg-center">Los datos cancelados
+ no se pueden
                                     recuperar.
                                 </small>
                             </div>

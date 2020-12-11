@@ -10,7 +10,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <title>Iniciar Sesion</title>
+    <title>Iniciar sesión</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         <a class="nav-link  text-lowercase lead " href="../information/listInstitution.php">universidades</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
-                        <a class="nav-link lead " href="login.php">INICIAR SESION</a>
+                        <a class="nav-link lead " href="login.php">INICIAR sesión</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="register.php">CREAR CUENTA</a>

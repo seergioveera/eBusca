@@ -18,7 +18,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
     
     <?php
      include('../../resources/funciones.php');
-     //si la funcion verificarUsuario retorno true, la sesion esta iniciada
+     //si la funcion verificarUsuario retorno true, la sesión esta iniciada
      if (verificarUsuario()) {
          $user = $_SESSION['miUsuario'];
         //  echo "<b>Bienvenido: $user<b>";
@@ -142,8 +142,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                 </small>
                             </div>
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-block btn-danger">Eliminar</button>
-                                <small id="" class="form-text text-muted text-lg-center">Los datos eliminados no se pueden recuperar.
+                                <button type="submit" class="btn btn-block btn-danger">Cancelar</button>
+                                <small id="" class="form-text text-muted text-lg-center">Los datos cancelados no se pueden recuperar.
                                 </small>
                             </div>
                         </div>

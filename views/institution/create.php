@@ -16,7 +16,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 
 <?php
      include('../../resources/funciones.php');
-     //si la funcion verificarUsuario retorno true, la sesion esta iniciada
+     //si la funcion verificarUsuario retorno true, la sesión esta iniciada
      if (verificarUsuario()) {
          $user = $_SESSION['miUsuario'];
          //echo "<b>Bienvenido: $user<b>";
@@ -131,7 +131,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     <input type="hidden" name="txtOpe" value='1'>
                     <input type="hidden" class="form-control" name="id" placeholder="" value="<?php echo "$user"; ?>">
                     <input type="submit" name="boton2" class="btn btn-block btn-primary" style="margin-top: 22px;" value="Registrar">
-                    <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
+                    <small id="" class="form-text text-muted text-lg-center">Todos sus datos están protegidos.
                     </small>
                     <hr>
             </div>

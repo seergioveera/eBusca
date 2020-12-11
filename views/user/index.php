@@ -59,7 +59,7 @@
                         if (verificarUsuario()) {
                             $user = $_SESSION['miUsuario'];
                             echo "
-        <a class='nav-link lead' href='../../resources/salir.php'>cerrar sesion</a><br>";
+        <a class='nav-link lead' href='../../resources/salir.php'>cerrar sesión</a><br>";
                         } else {
                             header("location:../index.php");
                         }

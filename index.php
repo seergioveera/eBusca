@@ -38,7 +38,7 @@
                         <a class="nav-link  text-lowercase lead " href="views/information/listInstitution.php">universidades</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
-                        <a class="nav-link lead " href="views/home/login.php">INICIAR SESION</a>
+                        <a class="nav-link lead " href="views/home/login.php">INICIAR sesión</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="views/home/register.php">CREAR CUENTA</a>

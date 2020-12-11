@@ -194,12 +194,12 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                 <input type="hidden" name="txtOpe" value='2'>
                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <input type="submit" id="boton1" name="boton1" class="btn btn-block btn-primary" value="Guardar">
-                                <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan protegidos.
+                                <small id="" class="form-text text-muted text-lg-center">Todos sus datos están protegidos.
                                 </small>
                             </div>
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-block btn-danger">Eliminar</button>
-                                <small id="" class="form-text text-muted text-lg-center">Los datos eliminados no se pueden recuperar.
+                                <a href="../user/index.php"><button class="btn btn-block btn-danger">Cancelar</button></a>
+                                <small id="" class="form-text text-muted text-lg-center">Los datos cancelados no se pueden recuperar.
                                 </small>
                             </div>
                         </div>
