@@ -33,32 +33,35 @@ if ($buscarCarreras->num_rows > 0) {
         $id = $filaCarreras["idCarrera"];
         $tabla .=
             '
-            <div class="container panel panel-primary" style="border-radius: 10px; border:solid 2px #0275d8; margin-top:10px; padding:5px;">
-            <div class="row" style="font-size: 25px">
-                <div class="col-12">
-                <span class="float-left" style=""><b style="color:#0275d8;">Carrera: </b>' . $filaCarreras['nombre'] . '</span>
-                </div>
-            </div>
-            <div class="row" style="font-size: 20px">
-                <div class="col-12" style="">
-                <span class="float-left" style=""><b style="color:#0275d8;">Descripcion: </b>' . $filaCarreras['descripcion'] . '</span>
-                </div>
-            </div>
+            <div class="container-fluid" style="border: solid 5px #0275d8; border-radius:15px; margin-top:2%">
+
+            <div class="form-group" style="font-size:150%; text-align: left; padding-top: 2%">
+            <label for="" class="text-primary">' . $filaCarreras['nombre'] . '</label>
+        </div>
     
-            <div class="row" style=" font-size: 18px;">
-                <div class="col-8" style:"text-aling:left">
-                <br>
-                    <tr><b style="color:#0275d8;"> - Arancel: </b>' . $filaCarreras['arancel'] . '</tr>
-                    <tr><b style="color:#0275d8;"> - Semestres:</b> ' . $filaCarreras['duracion'] . '</tr>
-                    <tr><b style="color:#0275d8;"> - Télefono:</b> ' . $filaCarreras['telefono'] . '</tr>
-                </div>
-                <div class="col-4">
-
-                    <a href="' . "../information2/career.php?id=$id" . '") class="btn btn-lg btn-primary">Ver mas</a>
-
-                </div>
+        <div class="form-group">
+            <hr>
+            <label for="">
+                <div class="text-primary" style="font-family: sans-serif; text-align: left;">Sobre la carrera: </div>
+                <p style=""> ' . $filaCarreras['descripcion'] . ' </p>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for=""><a class="text-primary" style="font-family: sans-serif;">Arancel:</a> ' . $filaCarreras['arancel'] . '</label>
+            </div>
+            <div class="col">
+                <label for=""><a class="text-primary" style="font-family: sans-serif;">Semestres:</a> ' . $filaCarreras['duracion'] . '</label>
+            </div>
+            <div class="col">
+                <label for=""><a class="text-primary" style="font-family: sans-serif;">Teléfono:</a> ' . $filaCarreras['telefono'] . '</label>
             </div>
         </div>
+        <hr>
+        <div class="form-group">
+            <a href="' . "../information2/career.php?id=$id" . '") class="btn btn-lg btn-primary">Ver más info</a>
+        </div>
+    </div>
 			';
     }
 

@@ -113,28 +113,28 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                 <label for=""><a class="text-primary" style="font-family: sans-serif;">Arancel:</a> <?php echo "$arancel"; ?></label>
                             </div>
                             <div class="col">
-                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Semestres:</a> : <?php echo "$duracion"; ?></label>
+                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Semestres: </a> <?php echo "$duracion"; ?></label>
                             </div>
                             <div class="col">
-                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Horario:</a> : <?php echo "$horario"; ?></label>
+                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Horario: </a> <?php echo "$horario"; ?></label>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col">
-                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Ciudad:</a> : <?php echo "$ciudad"; ?></label>
+                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Ciudad: </a> <?php echo "$ciudad"; ?></label>
                             </div>
                             <div class="col">
-                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Direccion:</a> : <?php echo "$direccion"; ?></label>
+                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Dirección: </a> <?php echo "$direccion"; ?></label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
-                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Telefono:</a> : <?php echo "$telefono"; ?></label>
+                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Télefono: </a> <?php echo "$telefono"; ?></label>
                             </div>
                             <div class="col">
-                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Correo:</a> : <?php echo "$correo"; ?></label>
+                                <label for=""><a class="text-primary" style="font-family: sans-serif;">Correo: </a> <?php echo "$correo"; ?></label>
                             </div>
                         </div>
                         <div class="form-group" style="text-align: center; font-size:110%">

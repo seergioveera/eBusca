@@ -100,7 +100,6 @@
                         </div>
                         <input type="text" class="form-control typeahead form-control-lg" name="busqueda" id="busqueda" placeholder="Buscar Carrera" aria-describedby="basic-addon1">
                     </div>
-                    
                 </section>
                 <section id="tabla_resultado">
                     <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
