@@ -9,7 +9,9 @@
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../../js/peticion.js"></script>
-    <title>eBusca</title>
+    <title>eBusca</title>    
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+
     <script type="text/javascript" src="../../js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap3-typeahead.min.js"></script>
     <script type="text/javascript" src="../../js/typeahead.js"></script>

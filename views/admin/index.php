@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <title>eBusca</title>
+    <title>eBusca</title>    <link rel="icon" type="image/png" href="img/favicon.png">
+
 </head>
 
 <body>
