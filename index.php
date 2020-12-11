@@ -19,8 +19,8 @@
 
     <nav class="navbar navbar-expand-lg fixed-top lead">
         <div class="container">
-            <a class="navbar-brand  lead" href="#">
-                <ion-icon name="library-outline"></ion-icon> eBusca
+            <a class="navbar-brand  lead" href="index.php">
+                <img src="img/logo.png" alt="logo-eBusca">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <ion-icon name="grid-outline" style="font-size: 32px;"></ion-icon>
@@ -65,7 +65,7 @@
                 <img src="img/img (5)2.jpg" class="d-block w-100" alt="..." style="width:640px;height:420px">
                 <div class="carousel-caption d-md-block">
                     <h5>Beneficios de usar eBusca:</h5>
-                    <p>Contiene un filtros de búsqueda, una lista de carreras e instituciones que facilitan y ahorra tiempo a la hora de buscar  información.</p>
+                    <p>Contiene un filtros de búsqueda, una lista de carreras e instituciones que facilitan y ahorra tiempo a la hora de buscar información.</p>
                 </div>
             </div>
             <div class="carousel-item">
@@ -96,7 +96,10 @@
                 <section>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span span class="input-group-text" id="inputGroup-sizing-lg"><ion-icon name="search-outline"></ion-icon></ion-icon></span>
+                            <span span class="input-group-text" id="inputGroup-sizing-lg">
+                                <ion-icon name="search-outline"></ion-icon>
+                                </ion-icon>
+                            </span>
                         </div>
                         <input type="text" class="form-control typeahead form-control-lg" name="busqueda" id="busqueda" placeholder="Buscar Carrera" aria-describedby="basic-addon1">
                     </div>

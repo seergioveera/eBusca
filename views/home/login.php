@@ -18,7 +18,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
     <nav class="navbar navbar-expand-lg fixed-top lead">
         <div class="container">
             <a class="navbar-brand  lead" href="../../index.php">
-                <ion-icon name="library-outline"></ion-icon> eBusca
+                <img src="../../img/logo.png" alt="logo-eBusca">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <ion-icon name="grid-outline" style="font-size: 32px;"></ion-icon>
@@ -55,47 +55,47 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                     </a>
                     <h1>Bienvenido</h1>
                 </div>
-                    <form method="POST" name="myForm" action="../../resources/validar.php">
-                        <div class="form-group">
-                            <hr>
-                            <label for="correo">Nombre de Usuario: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="mail-outline"></ion-icon>
-                                    </div>
-                                </div>
-                                <input type="mail" name="txtUsuario" class="form-control" id="usuario" placeholder="Nombre de Usuario" require>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="pass">Contraseña: </label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="key-outline"></ion-icon>
-                                    </div>
-                                </div>
-                                <input type="password" name="txtClave" class="form-control" id="password" placeholder="Contraseña" require>
-                            </div>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="">
-                            <label class="form-check-label small text-muted" for="">Recuerdame</label>
-                        </div>
-                        <button type="submit" id="entrarSistema" class="btn btn-block btn-primary" style="margin-top: 22px;">Ingresar</button>
+                <form method="POST" name="myForm" action="../../resources/validar.php">
+                    <div class="form-group">
                         <hr>
-                        <small id="" class="form-text text-muted text-lg-center">¿Aún no tienes una cuenta?
-                            <a href="register.php">Crear una cuenta</a> </small>
-                    </form>
-                </div>
-                <div class="d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4" style="border-radius: 5px; border: solid 2px #0275d8; background-color:#ECECEC">
+                        <label for="correo">Nombre de Usuario: </label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <input type="mail" name="txtUsuario" class="form-control" id="usuario" placeholder="Nombre de Usuario" require>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Contraseña: </label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <ion-icon name="key-outline"></ion-icon>
+                                </div>
+                            </div>
+                            <input type="password" name="txtClave" class="form-control" id="password" placeholder="Contraseña" require>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="">
+                        <label class="form-check-label small text-muted" for="">Recuerdame</label>
+                    </div>
+                    <button type="submit" id="entrarSistema" class="btn btn-block btn-primary" style="margin-top: 22px;">Ingresar</button>
+                    <hr>
+                    <small id="" class="form-text text-muted text-lg-center">¿Aún no tienes una cuenta?
+                        <a href="register.php">Crear una cuenta</a> </small>
+                </form>
+            </div>
+            <div class="d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4" style="border-radius: 5px; border: solid 2px #0275d8; background-color:#ECECEC">
                 <div class="">
                     <p style="padding-top: 15px;">
                         <h5 class="text-primary"> <b> Inicia sesión: </b></h5>
                     </p>
                     <hr><br>
-                    <p>Inicia sesión, publica informaciones, sugiere mejoras, busca carreras que se adapten a tus necesidades, 
+                    <p>Inicia sesión, publica informaciones, sugiere mejoras, busca carreras que se adapten a tus necesidades,
                         ahorre tiempo de navegación y disfruta de las muchas otras ventajas que trae consigo ser parte de este sitio web.</p>
                     <br>
                     <hr>
@@ -103,17 +103,17 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         <h7 class="text-primary"><b>No pierdas la oportunidad de formar parte. </b> </h7>
                     </p>
                 </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
-        <footer class="page-footer font-small blue" style="position: absolute; bottom: 0; width: 100%;;">
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-            </div>
-        </footer>
-        <script src="../../js/jquery-3.5.1.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
+    </div>
+    <footer class="page-footer font-small blue" style="position: absolute; bottom: 0; width: 100%;;">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+    </footer>
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
 </body>
 
 </html>
