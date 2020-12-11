@@ -59,6 +59,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="../user2/edit.php">Editar datos</a>
                     </li>
+                    <li class="nav-item text-lowercase  active content-center">
+                        <a class="nav-link lead " href="sugerir.php">Sugererencias</a>
+                    </li>
                     <li>
 
                         <?php

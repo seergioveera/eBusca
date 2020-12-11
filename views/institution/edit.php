@@ -117,8 +117,8 @@ if ($fila = mysqli_fetch_array($sql)) {
                                             <ion-icon name="home-outline"></ion-icon>
                                         </label>
                                     </div>
-                                    <select class="browser-default custom-select" name="ciudad">
-                                        <option value="0">Seleccione:</option>
+                                    <select class="browser-default custom-select" name="ciudad" required>
+                                        <option value="0" required>Seleccione:</option>
                                         <?php
                                         $query = $mysqli->query("SELECT * FROM ciudad ORDER BY nombre ASC");
                                         while ($valores = mysqli_fetch_array($query)) {
@@ -140,10 +140,8 @@ if ($fila = mysqli_fetch_array($sql)) {
                                 </small>
                             </div>
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-block btn-danger">Cancelar</button>
-                                <small id="" class="form-text text-muted text-lg-center">Los datos cancelados
- no se pueden
-                                    recuperar.
+                            <button class="btn btn-block btn-danger"><a href="../user/index.php" class="text-white" style="text-decoration: none;">Cancelar</a></button>
+                                <small id="" class="form-text text-muted text-lg-center">Los datos cancelados no se pueden recuperar.
                                 </small>
                             </div>
                         </div>
@@ -154,9 +152,9 @@ if ($fila = mysqli_fetch_array($sql)) {
             </div>
         </div>
     </div>
-    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%;">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%; background-color:#0275d8;">
+        <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+            <a href="#" class="text-white"> eBusca. Buscador de Instituciones Universitarias.</a>
         </div>
     </footer>
     <script src="../../js/jquery-3.5.1.min.js"></script>

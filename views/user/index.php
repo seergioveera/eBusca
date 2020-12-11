@@ -139,9 +139,9 @@
     </div>
     <hr>
     </div>
-    <footer class="page-footer font-small blue" style="margin-top: 15px;">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <footer class="page-footer font-small blue" style="margin-top: 15px; background-color:#0275d8;">
+        <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+            <a href="#" class="text-white"> eBusca. Buscador de Instituciones Universitarias.</a>
         </div>
     </footer>
     <script src="../../js/jquery-3.5.1.min.js"></script>

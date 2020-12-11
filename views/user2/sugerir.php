@@ -18,7 +18,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
     <nav class="navbar navbar-expand-lg fixed-top lead">
         <div class="container">
             <a class="navbar-brand  lead" href="index.php">
-                <ion-icon name="library-outline"></ion-icon> eBusca
+                <img src="../../img/logo.png" alt="logo-eBusca">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <ion-icon name="grid-outline" style="font-size: 32px;"></ion-icon>
@@ -77,22 +77,22 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                             </label>
                         </div>
                         <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <ion-icon name="business-outline"></ion-icon>
-                                    </div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <ion-icon name="business-outline"></ion-icon>
                                 </div>
-                                <select class="browser-default custom-select" name="institucion" required>
-                                    <option value="" required>Seleccione:</option>
-                                    <?php
-                                    $query = $mysqli->query("SELECT * FROM institucion");
-                                    while ($valores = mysqli_fetch_array($query)) {
-                                        echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
-                                    }
-                                    ?>
-                                </select>
                             </div>
-                            <br>
+                            <select class="browser-default custom-select" name="institucion" required>
+                                <option value="" required>Seleccione:</option>
+                                <?php
+                                $query = $mysqli->query("SELECT * FROM institucion");
+                                while ($valores = mysqli_fetch_array($query)) {
+                                    echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <br>
                         <div class="form-group">
                             <label for="">
                                 <h5>Escribir la sugerencia:</h5>
@@ -111,7 +111,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                 <input type="submit" name="boton3" class="btn btn-block btn-primary" value="Sugerir">
                             </div>
                             <div class="col-md-6">
-                                <a href="index.php" class="text-white"><button class="btn btn-block btn-danger">Cancelar</button></a>
+                                <button class="btn btn-block btn-danger"><a href="index.php" class="text-white" style="text-decoration: none;">Cancelar</a></button>
                             </div>
                         </div>
                         <hr>
@@ -121,9 +121,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
         </div>
     </div>
     </div>
-    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%;">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%; background-color:#0275d8;">
+        <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+            <a href="#" class="text-white"> eBusca. Buscador de Instituciones Universitarias.</a>
         </div>
     </footer>
     <script src="../../js/jquery-3.5.1.min.js"></script>

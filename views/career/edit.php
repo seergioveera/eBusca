@@ -198,7 +198,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                 </small>
                             </div>
                             <div class="col-md-6">
-                                <a href="../user/index.php"><button class="btn btn-block btn-danger">Cancelar</button></a>
+                                <button class="btn btn-block btn-danger"><a href="../user/index.php" class="text-white" style="text-decoration: none;">Cancelar</a></button>
                                 <small id="" class="form-text text-muted text-lg-center">Los datos cancelados no se pueden recuperar.
                                 </small>
                             </div>

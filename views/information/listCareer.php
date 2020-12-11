@@ -17,7 +17,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
     <nav class="navbar navbar-expand-lg fixed-top lead">
         <div class="container">
             <a class="navbar-brand  lead" href="../../index.php">
-            <img src="../../img/logo.png" alt="logo-eBusca">
+                <img src="../../img/logo.png" alt="logo-eBusca">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <ion-icon name="grid-outline" style="font-size: 32px;"></ion-icon>
@@ -57,13 +57,11 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
             </div>
         </div>
     </div>
-    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%;">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%; background-color:#0275d8;">
+        <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+            <a href="#" class="text-white"> eBusca. Buscador de Instituciones Universitarias.</a>
         </div>
     </footer>
-
-
 
     <div class="container col-xs-12 col-md-9 col-lg-8">
         <?php
@@ -85,7 +83,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
             echo "<th style='color:white'>Semestres</th>";
             echo "<th style='color:white'>Teléfono</th>";
             echo "</thead>";
-        } 
+        }
         while ($fila = mysqli_fetch_array($query)) {
             $nombre = $fila["nombre"];
             $descripcion = $fila["descripcion"];

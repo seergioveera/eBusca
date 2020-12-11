@@ -57,9 +57,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
             </div>
         </div>
     </div>
-    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%;">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <footer class="page-footer font-small blue" style="position: fixed; bottom: 0; width: 150%; background-color:#0275d8;">
+        <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+            <a href="#" class="text-white"> eBusca. Buscador de Instituciones Universitarias.</a>
         </div>
     </footer>
 
