@@ -112,6 +112,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <h1>User2 ha iniciado sesion</h1>
 
     <div class="container">
         <hr>
