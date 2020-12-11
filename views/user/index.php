@@ -45,9 +45,12 @@
                             INSTITUCIONES
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../institution/create.php">Agregar Institucion</a>
-                            <a class="dropdown-item" href="../institution/list.php">Editar Institucion</a>
+                            <a class="dropdown-item" href="../institution/create.php">Agregar Institución</a>
+                            <a class="dropdown-item" href="../institution/list.php">Editar Institución</a>
                         </div>
+                    </li>
+                    <li class="nav-item text-lowercase  active content-center">
+                        <a class="nav-link lead " href="sugerencias.php">Sugerencias</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="edit.php">Editar datos</a>

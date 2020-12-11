@@ -81,9 +81,9 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 
             echo "<th style='color:white'>Universidad</th>";
             echo "<th style='color:white'>Descripción</th>";
-            echo "<th style='color:white'>Direccion</th>";
+            echo "<th style='color:white'>Dirección</th>";
             echo "<th style='color:white'>Correo</th>";
-            echo "<th style='color:white'>Telefono</th>";
+            echo "<th style='color:white'>Teléfono</th>";
             echo "</thead>";
         } 
         while ($fila = mysqli_fetch_array($query)) {

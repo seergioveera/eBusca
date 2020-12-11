@@ -73,12 +73,34 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                         <hr><br>
                         <div class="form-group">
                             <label for="">
-                                <h5>Escribir una sugerencia:</h5>
+                                <h5>¿A qué Universidad quieres hacer la sugerencia?</h5>
+                            </label>
+                        </div>
+                        <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <ion-icon name="business-outline"></ion-icon>
+                                    </div>
+                                </div>
+                                <select class="browser-default custom-select" name="institucion" required>
+                                    <option value="" required>Seleccione:</option>
+                                    <?php
+                                    $query = $mysqli->query("SELECT * FROM institucion");
+                                    while ($valores = mysqli_fetch_array($query)) {
+                                        echo '<option name="institucion" value="' . $valores[idInstitucion] . '">' . $valores[nombre] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <br>
+                        <div class="form-group">
+                            <label for="">
+                                <h5>Escribir la sugerencia:</h5>
                             </label>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" id="" name="descripcion" rows="6"></textarea>
-                            <small id="" class="form-text text-muted text-lg-center">Todas las sugerencias hechas son anonimas.</small>
+                            <small id="" class="form-text text-muted text-lg-center">Todas las sugerencias hechas son anónimas.</small>
                         </div>
                     </div>
                     <div class="form-group">
@@ -89,7 +111,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                                 <input type="submit" name="boton3" class="btn btn-block btn-primary" value="Sugerir">
                             </div>
                             <div class="col-md-6">
-                                <a href="index.php" class="text-white"><button type="submit" class="btn btn-block btn-danger">Cancelar</button></a>
+                                <a href="index.php" class="text-white"><button class="btn btn-block btn-danger">Cancelar</button></a>
                             </div>
                         </div>
                         <hr>

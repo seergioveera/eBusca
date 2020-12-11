@@ -161,6 +161,7 @@ if ($_REQUEST['boton3']) {
     $pass = $_REQUEST['pass'];
     $tipoUser = $_REQUEST['tipoUser'];
 
+    $institucion = $_REQUEST['institucion'];
     $descripcion = $_REQUEST['descripcion'];
     $op = $_REQUEST['txtOpe'];
     include 'conexion.php';
@@ -184,8 +185,8 @@ if ($_REQUEST['boton3']) {
                 </script>';
             break;
             case '3':
-                $sql = mysqli_query($conn, "INSERT INTO sugerencias(descripcion)"
-                . "values('$descripcion')");
+                $sql = mysqli_query($conn, "INSERT INTO sugerencias(idInstitucion,descripcion)"
+                . "values('$institucion','$descripcion')");
                 echo $sql;
                 echo '<script type="text/javascript">
                     alert("Sugerencia enviada.");
