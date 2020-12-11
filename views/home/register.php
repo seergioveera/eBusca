@@ -162,20 +162,25 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                         <a href="login.php">Iniciar sesión</a> </small>
                 </form>
             </div>
-            <div class="text-login d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4">
-                <div class="text-login">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias est voluptates ab? Quo saepe
-                        expedita nemo asperiores aut voluptates blanditiis natus nesciunt voluptatem aliquid sint
-                        pariatur,
-                        dolorum architecto soluta distinctio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias est voluptates ab? Quo saepe
-                        expedita nemo asperiores aut voluptates blanditiis natus nesciunt voluptatem aliquid sint
-                        pariatur,
-                        dolorum architecto soluta distinctio.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias est voluptates ab? Quo saepe
-                        expedita nemo asperiores aut voluptates blanditiis natus nesciunt voluptatem aliquid sint
-                        pariatur,
-                        dolorum architecto soluta distinctio.</p>
+            <div class="d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4" style="border-radius: 5px; border: solid 2px #0275d8; background-color:#ECECEC">
+                <div class="">
+                    <p style="padding-top: 15px;">
+                        <h5 class="text-primary"> <b> Beneficios de registrarse: </b></h5>
+                    </p>
+                    <hr><br>
+                    <p>Al registrarse como <b class="text-primary">administrador</b> usted puede agregar Universidades y sus respectivas carreras,
+                        a su vez llevar un control total sobre su cuenta y sobre los datos de dichas instituciones.
+                        También puede leer las sugerencias y recomendaciones que los demás usuarios comparten para usted.</p>
+
+                    <p>Al registrarse como <b class="text-primary">usuario</b> usted puede filtrar las búsquedas,
+                        listar las carreras, las universidades, y llevar un control total sobre su cuenta y sus datos.
+                        También puede hacer sugerencias y recomendaciones a las Instituciones Educativas,
+                        con el fin de ser particípe en la mejora del sitio web.</p>
+                    <br>
+                    <hr>
+                    <p>
+                        <h7 class="text-primary"><b>No pierdas la oportunidad de formar parte. </b> </h7>
+                    </p>
                 </div>
                 </form>
             </div>

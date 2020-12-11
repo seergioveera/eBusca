@@ -89,21 +89,20 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                             <a href="register.php">Crear una cuenta</a> </small>
                     </form>
                 </div>
-                <div class="text-login d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4">
-                    <div class="text-login">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias est voluptates ab? Quo saepe
-                            expedita nemo asperiores aut voluptates blanditiis natus nesciunt voluptatem aliquid sint
-                            pariatur,
-                            dolorum architecto soluta distinctio.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias est voluptates ab? Quo saepe
-                            expedita nemo asperiores aut voluptates blanditiis natus nesciunt voluptatem aliquid sint
-                            pariatur,
-                            dolorum architecto soluta distinctio.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias est voluptates ab? Quo saepe
-                            expedita nemo asperiores aut voluptates blanditiis natus nesciunt voluptatem aliquid sint
-                            pariatur,
-                            dolorum architecto soluta distinctio.</p>
-                    </div>
+                <div class="d-none d-sm-none d-md-block col-xs-block col-md-block col-lg-4" style="border-radius: 5px; border: solid 2px #0275d8; background-color:#ECECEC">
+                <div class="">
+                    <p style="padding-top: 15px;">
+                        <h5 class="text-primary"> <b> Inicia sesión: </b></h5>
+                    </p>
+                    <hr><br>
+                    <p>Inicia sesión, publica informaciones, sugiere mejoras, busca carreras que se adapten a tus necesidades, 
+                        ahorre tiempo de navegación y disfruta de las muchas otras ventajas que trae consigo ser parte de este sitio web.</p>
+                    <br>
+                    <hr>
+                    <p>
+                        <h7 class="text-primary"><b>No pierdas la oportunidad de formar parte. </b> </h7>
+                    </p>
+                </div>
                     </form>
                 </div>
             </div>
