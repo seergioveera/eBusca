@@ -52,6 +52,11 @@ if ($buscarCarreras->num_rows > 0) {
                     <tr><b style="color:#0275d8;"> - Semestres:</b> ' . $filaCarreras['duracion'] . '</tr>
                     <tr><b style="color:#0275d8;"> - Télefono:</b> ' . $filaCarreras['telefono'] . '</tr>
                 </div>
+                <div class="col-4">
+
+                    <a href="' . "../information2/career.php?id=$id" . '") class="btn btn-lg btn-primary">Ver mas</a>
+
+                </div>
             </div>
         </div>
 			';

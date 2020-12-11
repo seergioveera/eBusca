@@ -16,7 +16,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
 
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top lead">
+    <nav class="navbar navbar-expand-lg fixed-top lead">
         <div class="container">
             <a class="navbar-brand  lead" href="../../index.php">
                 <ion-icon name="library-outline"></ion-icon> eBusca
@@ -50,7 +50,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
             <div class="form-login col-xs-12 col-md-9 col-lg-8">
-            <div class="main row">
+                <div class="main row">
                     <a href="../../index.php">
                         <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
                     </a>
@@ -68,7 +68,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                             <ion-icon name="man-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre"  required>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -127,6 +127,21 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                                 </select>
                             </div>
                         </div>
+                        <div class="col-auto">
+                            <label for="exampleInputPassword1">Tipo de Usuario: </label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <ion-icon name="business-outline"></ion-icon>
+                                    </div>
+                                </div>
+                                <select class="browser-default custom-select" name="tipoUser" required>
+                                    <option value="" name="tipoUser" required>Seleccione:</option>
+                                    <option value="2" name="tipoUser" required>Administrador</option>
+                                    <option value="3" name="tipoUser" required>Usuario</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="">Contraseña: </label>
@@ -142,8 +157,6 @@ $mysqli = new mysqli('localhost', 'root', '', 'ebusca');
                     <small id="" class="form-text text-muted">Nunca compartiremos tus datos con alguien más.</small>
                     <input type="hidden" name="txtOpe" value='1'>
                     <input type="submit" name="boton" class="btn btn-block btn-primary" style="margin-top: 22px;" value="Registrar">
-
-                    <!-- <button type="submit" name="boton" id="registrarNuevo" class="btn btn-block btn-primary" style="margin-top: 22px;">Registrarse</button> -->
                     <hr>
                     <small id="" class="form-text text-muted text-lg-center">¿Ya te encuentras registrado?
                         <a href="login.php">Iniciar sesion</a> </small>

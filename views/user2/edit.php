@@ -15,7 +15,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
 </head>
 
 <body>
-
+    
     <?php
      include('../../resources/funciones.php');
      //si la funcion verificarUsuario retorno true, la sesion esta iniciada
@@ -40,9 +40,10 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
     }
     ?>
 
+
     <div class="container" style="margin-top: 120px;">
         <div class="main row">
-            <a href="../user/index.php">
+            <a href="../user2/index.php">
                 <ion-icon name="arrow-back-circle-outline" style="font-size: 50px; margin-left: 10px;"></ion-icon>
             </a>
             <div class="form-login col-xs-12 col-md-9 col-lg-8">
@@ -135,7 +136,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'eBusca');
                             <div class="col-md-6">
                                 <input type="hidden" name="txtOpe" value='2'>
                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                <input type="submit" name="boton" class="btn btn-block btn-primary" value="Guardar">
+                                <input type="submit" name="boton3" class="btn btn-block btn-primary" value="Guardar">
                                 <small id="" class="form-text text-muted text-lg-center">Todos sus datos estan
                                     protegidos.
                                 </small>

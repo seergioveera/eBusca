@@ -31,26 +31,17 @@
                     <li class="nav-item active">
                         <a class="nav-link  text-lowercase lead " href="index.php">INICIO</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link   text-lowercase  lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CARRERAS
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../career/create.php">Agregar Carrera</a>
-                            <a class="dropdown-item" href="../career/list.php">Editar Carrera</a>
-                        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="../information2/listCareer.php">carreras</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  text-lowercase lead dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            INSTITUCIONES
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../institution/create.php">Agregar Institucion</a>
-                            <a class="dropdown-item" href="../institution/list.php">Editar Institucion</a>
-                        </div>
+                    <li class="nav-item active">
+                        <a class="nav-link  text-lowercase lead " href="../information2/listInstitution.php">universidades</a>
                     </li>
                     <li class="nav-item text-lowercase  active content-center">
                         <a class="nav-link lead " href="edit.php">Editar datos</a>
+                    </li>
+                    <li class="nav-item text-lowercase  active content-center">
+                        <a class="nav-link lead " href="sugerir.php">Sugererencias</a>
                     </li>
                     <li>
 
@@ -112,8 +103,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <h1>User2 ha iniciado sesion</h1>
-
     <div class="container">
         <hr>
         <section class="row">
@@ -128,6 +117,7 @@
                         </div>
                         <input type="text" class="form-control typeahead form-control-lg" name="busqueda" id="busqueda" placeholder="Buscar Carrera" aria-describedby="basic-addon1">
                     </div>
+                    
                 </section>
                 <section id="tabla_resultado">
                     <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
@@ -142,8 +132,8 @@
             <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
     </footer>
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 <script>
     $(document).ready(function() {
@@ -164,6 +154,6 @@
         });
     });
 </script>
-<script type="text/javascript" src="../../js/typeahead.js"></script>
+<script type="text/javascript" src="typeahead.js"></script>
 
 </html>

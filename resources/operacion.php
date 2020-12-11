@@ -1,4 +1,4 @@
-<!-- /*OPERACIONES PARA EL USUARIO */ -->
+<!-- /*OPERACIONES PARA EL USUARIO*/ -->
 <?php
 if ($_REQUEST['boton']) {
     $nombre = $_REQUEST['nombre'];
@@ -7,13 +7,14 @@ if ($_REQUEST['boton']) {
     $fechaNacimiento = $_REQUEST['fechaNacimiento'];
     $ciudad = $_REQUEST['ciudad'];
     $pass = $_REQUEST['pass'];
+    $tipoUser = $_REQUEST['tipoUser'];
 
     $op = $_REQUEST['txtOpe'];
     include 'conexion.php';
     switch ($op) {
         case '1':
-            $sql = mysqli_query($conn, "INSERT INTO usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad)"
-                . "values('$nombre','$apellido','$fechaNacimiento','$correo','$pass','$ciudad')");
+            $sql = mysqli_query($conn, "INSERT INTO usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad,idTipoUsuario)"
+                . "values('$nombre','$apellido','$fechaNacimiento','$correo','$pass','$ciudad','$tipoUser')");
             echo '<script type="text/javascript">
                 alert("Usuario registrado correctamente.");
                 window.location.href="../views/home/login.php";
@@ -139,6 +140,62 @@ if ($_REQUEST['boton2']) {
     <script type="text/javascript">
         function cerrar() {
             location.href = "index.php";
+            alert("Operación Exitosa.");
+            self.close();
+        }
+        var cierre = setTimeout('cerrar()', 10);
+    </script>
+<?php
+}
+?>
+
+
+<!-- /*OPERACIONES PARA EL USUARIO 2*/-->
+<?php
+if ($_REQUEST['boton3']) {
+    $nombre = $_REQUEST['nombre'];
+    $apellido = $_REQUEST['apellido'];
+    $correo = $_REQUEST['correo'];
+    $fechaNacimiento = $_REQUEST['fechaNacimiento'];
+    $ciudad = $_REQUEST['ciudad'];
+    $pass = $_REQUEST['pass'];
+    $tipoUser = $_REQUEST['tipoUser'];
+
+    $descripcion = $_REQUEST['descripcion'];
+    $op = $_REQUEST['txtOpe'];
+    include 'conexion.php';
+    switch ($op) {
+        case '1':
+            $sql = mysqli_query($conn, "INSERT INTO usuario(nombre,apellido,fechaNacimiento,correo,password,idCiudad,idTipoUsuario)"
+                . "values('$nombre','$apellido','$fechaNacimiento','$correo','$pass','$ciudad','$tipoUser')");
+            echo '<script type="text/javascript">
+                alert("Usuario registrado correctamente.");
+                window.location.href="../views/home/login.php";
+                </script>';
+            break;
+        case '2':
+            $id = $_REQUEST['id'];
+            $sql = mysqli_query($conn, "UPDATE usuario SET nombre='$nombre',apellido='$apellido',"
+                . "correo='$correo',fechaNacimiento='$fechaNacimiento',password='$pass', idCiudad='$ciudad' where idUsuario='$id'");
+            echo $sql;
+            echo '<script type="text/javascript">
+                alert("Datos modificados correctamente.");
+                window.location.href="../views/user2/index.php";
+                </script>';
+            break;
+            case '3':
+                $sql = mysqli_query($conn, "INSERT INTO sugerencias(descripcion)"
+                . "values('$descripcion')");
+                echo $sql;
+                echo '<script type="text/javascript">
+                    alert("Sugerencia enviada.");
+                    window.location.href="../views/user2/index.php";
+                    </script>';
+                break;
+    }
+?>
+    <script type="text/javascript">
+        function cerrar() {
             alert("Operación Exitosa.");
             self.close();
         }
