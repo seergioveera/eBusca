@@ -106,7 +106,7 @@
                     </div>
                 </section>
                 <section id="tabla_resultado">
-                    <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
+                    <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTAS -->
                 </section>
                 <br><br>
             </div>
